@@ -1,0 +1,21 @@
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/vtk13/mvc"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/kartsims/easysvg"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Vtk13\\Cups\\": "src"
+        },
+        "classmap": ["libs/easysvg/src/"]
+    },
+    "require": {
+        "vtk13/mvc": "dev-master"
+    }
+}

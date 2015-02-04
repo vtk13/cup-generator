@@ -1,0 +1,84 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "9f748f8748d9f5bc5117ef7ae4b1e617",
+    "packages": [
+        {
+            "name": "kartsims/easysvg",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartsims/easysvg.git",
+                "reference": "5c81e66c43d4177a63ca4117a20d20747de0775a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartsims/easysvg/zipball/5c81e66c43d4177a63ca4117a20d20747de0775a",
+                "reference": "5c81e66c43d4177a63ca4117a20d20747de0775a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Tarchichi",
+                    "email": "kartsims@gmail.com"
+                }
+            ],
+            "description": "PHP library to generate SVG XML",
+            "homepage": "http://kartsims.github.com/easysvg/",
+            "support": {
+                "source": "https://github.com/kartsims/easysvg/tree/master",
+                "issues": "https://github.com/kartsims/easysvg/issues"
+            },
+            "time": "2014-09-24 08:45:28"
+        },
+        {
+            "name": "vtk13/mvc",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vtk13/mvc.git",
+                "reference": "52be8cbc72eca0bdcc2af5baccd18c6949a2ba83"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vtk13/mvc/zipball/52be8cbc72eca0bdcc2af5baccd18c6949a2ba83",
+                "reference": "52be8cbc72eca0bdcc2af5baccd18c6949a2ba83",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Vtk13\\Mvc\\": "src"
+                }
+            },
+            "support": {
+                "source": "https://github.com/vtk13/mvc/tree/master",
+                "issues": "https://github.com/vtk13/mvc/issues"
+            },
+            "time": "2014-11-30 11:41:14"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "vtk13/mvc": 20,
+        "kartsims/easysvg": 20
+    },
+    "prefer-stable": false,
+    "platform": [],
+    "platform-dev": []
+}
