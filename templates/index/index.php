@@ -6,5 +6,6 @@
     <div>Толщина материала <input type="text" name="weight" value="3"></div>
     <div>Ящиков в ряду <input type="text" name="x" value="3"></div>
     <div>Ящиков в колонке <input type="text" name="y" value="3"></div>
+    <div><label><input type="checkbox" name="includeBoxes" checked> чертить ящики</label></div>
     <div><button type="submit">Нарисовать</button></div>
 </form>

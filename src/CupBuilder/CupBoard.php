@@ -14,8 +14,9 @@ use Vtk13\Cups\CupBuilder\Elements\CupboardTopBottom;
 class CupBoard
 {
     public $boxWidth, $boxHeight, $boxDepth, $weight, $x, $y;
+    public $includeBoxes;
 
-    public function __construct($unitWidth, $unitHeight, $unitDepth, $weight, $x, $y)
+    public function __construct($unitWidth, $unitHeight, $unitDepth, $weight, $x, $y, $includeBoxes = true)
     {
         $this->boxWidth     = $unitWidth;
         $this->boxHeight    = $unitHeight;
@@ -23,6 +24,7 @@ class CupBoard
         $this->weight       = $weight;
         $this->x = $x;
         $this->y = $y;
+        $this->includeBoxes = $includeBoxes;
     }
 
     public function buildSVG()
@@ -30,34 +32,41 @@ class CupBoard
         $svg = new EasySVG();
         $svg->addAttribute('xmlns', 'http://www.w3.org/2000/svg');
 
+        // нижняя и верхняя общие стенки
         $ctb = new CupboardTopBottom($this);
+        // левая и права общие стенки
         $clr = new CupboardLeftRight($this);
+        // задняя общая стенка
         $cb = new CupboardBack($this);
 
         $elements = [
             $cb, $ctb, $ctb, $clr, $clr
         ];
 
+        // вертикальные промежуточные стенки
         $cmv = new CupboardMiddleVertical($this);
         for ($i = 1 ; $i < $this->x ; $i++) {
             $elements[] = $cmv;
         }
 
+        // горизонтальные промежуточные стенки
         $cmh = new CupboardMiddleHorizontal($this);
         for ($i = 1 ; $i < $this->y ; $i++) {
             $elements[] = $cmh;
         }
 
-        $boxGap = 0.5;
-        $bb =  new BoxBottom   ($this->boxWidth - $boxGap, $this->boxHeight - $boxGap, $this->boxDepth, $this->weight);
-        $blr = new BoxLeftRight($this->boxWidth - $boxGap, $this->boxHeight - $boxGap, $this->boxDepth, $this->weight);
-        $bfb = new BoxFrontBack($this->boxWidth - $boxGap, $this->boxHeight - $boxGap, $this->boxDepth, $this->weight);
-        for ($i = 0 ; $i < $this->x * $this->y ; $i++) {
-            $elements[] = $bb;
-            $elements[] = $blr;
-            $elements[] = $blr;
-            $elements[] = $bfb;
-            $elements[] = $bfb;
+        if ($this->includeBoxes) {
+            $boxGap = 0.5;
+            $bb = new BoxBottom   ($this->boxWidth - $boxGap, $this->boxHeight - $boxGap, $this->boxDepth, $this->weight);
+            $blr = new BoxLeftRight($this->boxWidth - $boxGap, $this->boxHeight - $boxGap, $this->boxDepth, $this->weight);
+            $bfb = new BoxFrontBack($this->boxWidth - $boxGap, $this->boxHeight - $boxGap, $this->boxDepth, $this->weight);
+            for ($i = 0; $i < $this->x * $this->y; $i++) {
+                $elements[] = $bb;
+                $elements[] = $blr;
+                $elements[] = $blr;
+                $elements[] = $bfb;
+                $elements[] = $bfb;
+            }
         }
 
         usort($elements, function(Path $e1, Path $e2) {

@@ -25,7 +25,8 @@ class IndexController extends AbstractController
             (int)$_POST['boxDepth'],
             (int)$_POST['weight'],
             (int)$_POST['x'],
-            (int)$_POST['y']
+            (int)$_POST['y'],
+            !empty($_POST['includeBoxes'])
         );
 
         return new Response(
