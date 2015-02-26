@@ -57,7 +57,7 @@ class CupBoard
 
         if ($this->includeBoxes) {
             $boxGap = 0.5;
-            $bb = new BoxBottom   ($this->boxWidth - $boxGap, $this->boxHeight - $boxGap, $this->boxDepth, $this->weight);
+            $bb  = new BoxBottom   ($this->boxWidth - $boxGap, $this->boxHeight - $boxGap, $this->boxDepth, $this->weight);
             $blr = new BoxLeftRight($this->boxWidth - $boxGap, $this->boxHeight - $boxGap, $this->boxDepth, $this->weight);
             $bfb = new BoxFrontBack($this->boxWidth - $boxGap, $this->boxHeight - $boxGap, $this->boxDepth, $this->weight);
             for ($i = 0; $i < $this->x * $this->y; $i++) {
