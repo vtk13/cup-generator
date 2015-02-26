@@ -13,25 +13,25 @@ class CupboardLeftRight extends Path
         $w = $cupBoard->weight;
 
         $this->m(0, 0);
-        $this->h($d3)->v($w)->h($d3)->v(-$w)->h($d3);
+        $this->v($d3)->h($w)->v($d3)->h(-$w)->v($d3);
 
-        $this->v($w);
+        $this->h($w);
         for ($i = 0 ; $i < $cupBoard->y ; $i++) {
-            $this->v($h3)->h($w)->v($h3)->h(-$w)->v($h3)->v($w);
+            $this->h($h3)->v($w)->h($h3)->v(-$w)->h($h3)->h($w);
         }
 
-        $this->h(-$d3)->v(-$w)->h(-$d3)->v($w)->h(-$d3);
+        $this->v(-$d3)->h(-$w)->v(-$d3)->h($w)->v(-$d3);
 
-        $this->v(-$w);
+        $this->h(-$w);
         for ($i = 0 ; $i < $cupBoard->y ; $i++) {
-            $this->v(-$cupBoard->boxHeight)->v($w);
+            $this->h(-$cupBoard->boxHeight)->h(-$w);
         }
         $this->z();
 
-        $this->m($d3, 0);
+        $this->m(0, $d3);
         for ($i = 1 ; $i < $cupBoard->y ; $i++) {
-            $this->m(0, $w + $cupBoard->boxHeight);
-            $this->h($d3)->v($w)->h(-$d3)->v(-$w)->z();
+            $this->m($w + $cupBoard->boxHeight, 0);
+            $this->v($d3)->h($w)->v(-$d3)->h(-$w)->z();
         }
     }
 }

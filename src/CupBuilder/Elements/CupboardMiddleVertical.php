@@ -13,21 +13,21 @@ class CupboardMiddleVertical extends Path
         $h3 = $cupBoard->boxHeight / 3;
         $w = $cupBoard->weight;
 
-        $this->m(0, $w);
-        $this->h($d3)->v(-$w)->h($d3)->v($w)->h($d3);
+        $this->m($w, 0);
+        $this->v($d3)->h(-$w)->v($d3)->h($w)->v($d3);
         for ($i = 0 ; $i < $cupBoard->y ; $i++) {
             if ($i > 0) {
-                $this->v($w);
+                $this->h($w);
             }
-            $this->v($h3)->h($w)->v($h3)->h(-$w)->v($h3);
+            $this->h($h3)->v($w)->h($h3)->v(-$w)->h($h3);
         }
-        $this->h(-$d3)->v($w)->h(-$d3)->v(-$w)->h(-$d3);
+        $this->v(-$d3)->h($w)->v(-$d3)->h(-$w)->v(-$d3);
 
         for ($i = 0 ; $i < $cupBoard->y ; $i++) {
             if ($i > 0) {
-                $this->h($d2)->v(-$w)->h(-$d2);
+                $this->v($d2)->h(-$w)->v(-$d2);
             }
-            $this->v(-$cupBoard->boxHeight);
+            $this->h(-$cupBoard->boxHeight);
         }
         $this->z();
     }

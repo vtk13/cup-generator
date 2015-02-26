@@ -70,7 +70,7 @@ class CupBoard
         }
 
         usort($elements, function(Path $e1, Path $e2) {
-            return $e1->getHeight() - $e2->getHeight();
+            return $e1->getWidth() - $e2->getWidth();
         });
 
         $best = 400; $bestSquare = 1e9;
