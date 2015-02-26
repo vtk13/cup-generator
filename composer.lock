@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9f748f8748d9f5bc5117ef7ae4b1e617",
+    "hash": "1d9417ab200e31a046d683903e54f502",
     "packages": [
         {
             "name": "kartsims/easysvg",
@@ -79,6 +79,7 @@
         "kartsims/easysvg": 20
     },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }

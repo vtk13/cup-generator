@@ -13,9 +13,10 @@
         "psr-4": {
             "Vtk13\\Cups\\": "src"
         },
-        "classmap": ["libs/easysvg/src/"]
+        "classmap": ["vendor/kartsims/easysvg/src/"]
     },
     "require": {
-        "vtk13/mvc": "dev-master"
+        "vtk13/mvc": "dev-master",
+        "kartsims/easysvg": "dev-master"
     }
 }
