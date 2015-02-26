@@ -14,7 +14,7 @@ class CupboardMiddleHorizontal extends Path
         $w = $cupBoard->weight;
 
         $this->m($w, $w);
-        for ($i = 0 ; $i < $cupBoard->y ; $i++) {
+        for ($i = 0 ; $i < $cupBoard->x ; $i++) {
             if ($i > 0) {
                 $this->v($d2)->h($w)->v(-$d2);
             }
@@ -22,7 +22,7 @@ class CupboardMiddleHorizontal extends Path
         }
         $this->v($d3)->h($w)->v($d3)->h(-$w)->v($d3);
 
-        for ($i = 0 ; $i < $cupBoard->y ; $i++) {
+        for ($i = 0 ; $i < $cupBoard->x ; $i++) {
             if ($i > 0) {
                 $this->h(-$w);
             }
